@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="GLASS_DEFAULT_WIDTH">336</dimen>
+    <dimen name="GLASS_DEFAULT_HEIGHT">588</dimen>
+    <dimen name="MENU_FRAME_MARGINS">32</dimen>
+</resources>

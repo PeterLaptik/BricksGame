@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".TKeyboardLeft" android:orientation="vertical" android:gravity="bottom|right">
+    <Button
+            android:text="@string/strVoid"
+            android:layout_width="64dp"
+            android:layout_height="64dp" android:id="@+id/btnVLeft" android:background="@drawable/arrow_left"/>
+    <Button
+            android:text="@string/strVoid"
+            android:layout_width="64dp"
+            android:layout_height="64dp" android:id="@+id/btnVDown" android:background="@drawable/arrow_down"/>
+</LinearLayout>

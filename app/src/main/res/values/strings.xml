@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BricksGame</string>
+    <string name="strVoid"></string>
+    <string name="STR_START">START</string>
+    <string name="strScores">SCORES</string>
+    <string name="STR_ZERO">0</string>
+    <string name="srtLines">LINES</string>
+    <string name="strLevel">LEVEL</string>
+    <string name="strRestart">RESTART</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="strStart">START GAME</string>
+    <string name="strHighScores">HIGH SCORES</string>
+    <string name="strSettings">SETTINGS</string>
+    <string name="strCredits">CREDITS</string>
+    <string name="strNextFigure">NEXT</string>
+
+</resources>

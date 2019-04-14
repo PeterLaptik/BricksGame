@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="144dp">
+
+        <Button
+                android:text="@string/strVoid"
+                android:layout_width="64dp"
+                android:layout_height="64dp" android:id="@+id/buttnonRight"
+                android:background="@drawable/arrow_right"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="64dp" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginLeft="8dp"/>
+        <Button
+                android:text="@string/strVoid"
+                android:layout_width="64dp"
+                android:layout_height="64dp" android:id="@+id/buttonLeft"
+                android:background="@drawable/arrow_left" style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"/>
+        <Button
+                android:text="@string/strVoid"
+                android:layout_width="64dp"
+                android:layout_height="64dp" android:id="@+id/buttonRotate"
+                android:background="@drawable/round_arrow"
+                style="@style/Widget.AppCompat.Button.Borderless" android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintStart_toEndOf="@+id/buttonDown" android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"/>
+        <Button
+                android:text="@string/strVoid"
+                android:layout_width="64dp"
+                android:layout_height="64dp" android:id="@+id/buttonDown" android:background="@drawable/arrow_down"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/buttnonRight" android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp" android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <android.support.constraint.Guideline
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:layout_constraintGuide_begin="12dp"
+                android:id="@+id/guideline7"/>
+        <android.support.constraint.Guideline
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:layout_constraintGuide_begin="100dp"
+                android:id="@+id/guideline8"/>
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
