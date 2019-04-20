@@ -19,16 +19,16 @@
     <TextView
             android:text="@string/strSettings"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_marginTop="24dp"
+            android:layout_height="wrap_content" android:id="@+id/btnSettings" android:layout_marginTop="24dp"
             app:fontFamily="@font/zxspectrum" android:textSize="18sp" android:gravity="center"/>
     <TextView
             android:text="@string/strHighScores"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView2" android:gravity="center"
+            android:layout_height="wrap_content" android:id="@+id/btnScores" android:gravity="center"
             android:textSize="18sp" app:fontFamily="@font/zxspectrum" android:layout_marginTop="24dp"/>
     <TextView
             android:text="@string/strCredits"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView4" android:gravity="center"
+            android:layout_height="wrap_content" android:id="@+id/btnCredits" android:gravity="center"
             app:fontFamily="@font/zxspectrum" android:layout_marginTop="24dp" android:textSize="18sp"/>
 </LinearLayout>

@@ -15,5 +15,8 @@
     <string name="strSettings">SETTINGS</string>
     <string name="strCredits">CREDITS</string>
     <string name="strNextFigure">NEXT</string>
+    <string name="strPlayer">PLAYER</string>
+    <string name="strEnterName">ENTER YOUR NAME</string>
+    <string name="strPlayerScores">Your scores:</string>
 
 </resources>

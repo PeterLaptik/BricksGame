@@ -22,7 +22,7 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     private final float CELLS_FOR_NEXT = 5.1f;  // number of cells for the widget for next figure output
     // Game settings
     private final int MAX_LEVEL = 10;
-    private final int LINES_PER_LEVEL = 20;
+    private final int LINES_PER_LEVEL = 10;
     private final int PAUSE_ITERATIONS = 14;
     private final int TIME_SLEEP = 50;
     private final int DROP_PAUSE = 2;

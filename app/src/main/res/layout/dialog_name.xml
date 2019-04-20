@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:orientation="vertical"
+              android:gravity="center" android:maxWidth="128dp" tools:layout_height="match_parent"
+              tools:layout_width="match_parent"
+              style="@android:style/Theme.Dialog">
+
+    <TextView
+            android:text="@string/strPlayerScores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/txtDialScores" android:textSize="16sp"/>
+    <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/strPlayer"
+            android:ems="10"
+            android:id="@+id/textNameInput" android:layout_width="match_parent"/>
+    <Button
+            android:text="@android:string/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnNameOK"/>
+</LinearLayout>
