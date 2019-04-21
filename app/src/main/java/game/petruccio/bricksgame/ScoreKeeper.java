@@ -3,14 +3,17 @@ package game.petruccio.bricksgame;
 import android.content.Context;
 import java.io.*;
 
+/**
+ * A singleton that keeps scores and drives read/write scores operations.
+ */
 public class ScoreKeeper {
     private static ScoreKeeper instance = null;
     private Context context = null;
     private final int TABLE_SIZE = 9;
     private final String DEFAULT_NAME = "PLAYER";
     private final String FILE_NAME = "scores";
-    private int[] scores = new int[TABLE_SIZE];
-    private String[] names = new String[TABLE_SIZE];
+    private int[] scores = new int[TABLE_SIZE];         // scores values
+    private String[] names = new String[TABLE_SIZE];    // name values
 
     private ScoreKeeper(){
         for(int i=0; i<TABLE_SIZE; i++)

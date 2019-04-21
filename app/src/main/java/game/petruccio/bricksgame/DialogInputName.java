@@ -37,18 +37,15 @@ public class DialogInputName extends DialogFragment implements View.OnClickListe
 
         TextView title = new TextView(getContext());
         title.setText(R.string.strEnterName);
-//        title.setBackgroundColor(Color.DKGRAY);
         title.setPadding(10, 10, 10, 10);
         title.setGravity(Gravity.CENTER);
         title.setTextColor(Color.WHITE);
         title.setTextSize(18);
-
-//        builder.setMessage(R.string.strEnterName);
         builder.setCustomTitle(title);
-
         view = inflater.inflate(R.layout.dialog_name, null);
         builder.setView(view);
         dialog =  builder.create();
+
         dialog.setCanceledOnTouchOutside(false);
         ((TextView)view.findViewById(R.id.txtDialScores))
                 .setText(getActivity().getResources().getString(R.string.strPlayerScores) + Integer.toString(scores));
@@ -64,7 +61,7 @@ public class DialogInputName extends DialogFragment implements View.OnClickListe
         name = inputName.getText().toString();
         if((name==null) || (name.length()<1))
             name = DEF_NAME;
-        ScoreKeeper.getInstance().insertScores(name, scores);
+        ScoreKeeper.getInstance().insertScores(name.toUpperCase(), scores);
         this.dismiss();
     }
 }

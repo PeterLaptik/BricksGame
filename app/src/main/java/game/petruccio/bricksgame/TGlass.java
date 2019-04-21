@@ -336,6 +336,11 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     }
 
     public void  onGameOver(){
+        if(ScoreKeeper.getInstance().isNewRecord(scores)){  // input name for high score table
+            DialogInputName dlg = new DialogInputName();
+            dlg.setScores(scores);
+            dlg.show(getActivity().getSupportFragmentManager(), "input_name_dialog");
+        }
         btnStart.setText(R.string.strRestart);
         glass.setIsGameOver(true);
     }
