@@ -261,8 +261,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
             return;
         if(figure.moveLeft() && !isMuted) {
             beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0, 0);
-            glass.invalidate();
         }
+        glass.invalidate();
     }
 
     public void moveRight(){
@@ -270,8 +270,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
             return;
         if(figure.moveRight() && !isMuted) {
             beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0, 0);
-            glass.invalidate();
         }
+        glass.invalidate();
     }
 
     public void rotate(){
@@ -279,8 +279,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
             return;
         if(figure.rotate() && !isMuted) {
             beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0, 0);
-            glass.invalidate();
         }
+        glass.invalidate();
     }
 
     public void moveDown(){
