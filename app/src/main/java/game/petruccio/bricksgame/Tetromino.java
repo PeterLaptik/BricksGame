@@ -57,26 +57,28 @@ public class Tetromino {
         isGameOver = false;
     }
 
-    public void moveLeft(){
+    public boolean moveLeft(){
         for (int i=0; i<CELLS_NUM; i++){
             if(figurePoints[i].y>=0)   // avoid crashes during rotation at the top of the matrix
                 if ((figurePoints[i].x-1<0)||(glass[figurePoints[i].x-1][figurePoints[i].y]!=0))
-                    return;
+                    return false;
         }
         for (int i=0; i<CELLS_NUM; i++){
             figurePoints[i].x -= 1;
         }
+        return true;
     }
 
-    public void moveRight(){
+    public boolean moveRight(){
         for (int i=0; i<CELLS_NUM; i++){
             if(figurePoints[i].y>=0)   // avoid crashes during rotation at the top of the matrix
                 if ((figurePoints[i].x+1>GLASS_X-1)||(glass[figurePoints[i].x+1][figurePoints[i].y]!=0))
-                    return;
+                    return false;
         }
         for (int i=0; i<CELLS_NUM; i++){
             figurePoints[i].x += 1;
         }
+        return true;
     }
 
     /**
@@ -107,9 +109,9 @@ public class Tetromino {
      * Creates temporary brick-coordinates array to check for collides and intersections in rotated state.
      * If intersection checks are OK, inserts temporary coordinates values into current figure coordinates
      */
-    public void rotate(){
+    public boolean rotate(){
         if (gravityPoint==NO_ROTATION)
-            return; // no rotation for for O-brick
+            return false; // no rotation for for O-brick
         // Rotation of the temporary figure:
         // x2 = px + py - y1 - q
         // y2 = x1 + py - px
@@ -147,10 +149,10 @@ public class Tetromino {
             if(nextState[i].y<0)   // avoid crashes during rotation at the top of the matrix
                 continue;
             if (nextState[i].y>GLASS_Y-1)
-                return;
+                return false;
             if (glass[nextState[i].x][nextState[i].y]!=0) {
                 // Cannot be rotated
-                return;
+                return false;
             }
         }
         // If OK - exchange the coordinates
@@ -158,6 +160,7 @@ public class Tetromino {
             figurePoints[i].x = nextState[i].x;
             figurePoints[i].y = nextState[i].y;
         }
+        return true;
     }
 
     /**

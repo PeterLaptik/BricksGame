@@ -162,12 +162,10 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
                         figure.moveDown();
                         glass.postInvalidate();
                     }
-                    //playCollide();  // sound
                     isDropping = false;
                     figure.createNew();
-                    if(!isMuted)
+                    if(eliminateLines() && !isMuted)
                         beep.play(SND_COLLIDE, VOLUME, VOLUME, 0, 0,0);
-                    eliminateLines();
                     nextFigure.postInvalidate();
                     continue;
                 }
@@ -185,11 +183,9 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
                     continue;
                 figure.moveDown();
                 if (figure.getIsSettled()){ // colliding
-                    //playCollide();  // sound
                     figure.createNew();
-                    if(!isMuted)
+                    if(eliminateLines() && !isMuted)
                         beep.play(SND_COLLIDE, VOLUME, VOLUME, 0, 0,0);
-                    eliminateLines();
                     nextFigure.postInvalidate();
                 }
                 glass.postInvalidate();
@@ -208,7 +204,7 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
      * Checks filled lines.
      * Eliminates them, counts scores and switch levels.
      */
-    private void eliminateLines(){
+    private boolean eliminateLines(){
         int lineCounter = 0;
         // Get matrix
         int bricksNet[][] = GlassNetArray.getInstance().getArray();
@@ -254,33 +250,37 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
                 labelLevel.setText(Integer.toString(level));
             }
         });
+        if (lineCounter==0)
+            return true;
+        else
+            return false;
     }
 
     public void moveLeft(){
         if((game!=null) && (!game.isAlive()))
             return;
-        if(!isMuted)
-            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
-        figure.moveLeft();
-        glass.invalidate();
+        if(figure.moveLeft() && !isMuted) {
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0, 0);
+            glass.invalidate();
+        }
     }
 
     public void moveRight(){
         if((game!=null) && (!game.isAlive()))
             return;
-        if(!isMuted)
-            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
-        figure.moveRight();
-        glass.invalidate();
+        if(figure.moveRight() && !isMuted) {
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0, 0);
+            glass.invalidate();
+        }
     }
 
     public void rotate(){
         if((game!=null) && (!game.isAlive()))
             return;
-        if(!isMuted)
-            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
-        figure.rotate();
-        glass.invalidate();
+        if(figure.rotate() && !isMuted) {
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0, 0);
+            glass.invalidate();
+        }
     }
 
     public void moveDown(){
