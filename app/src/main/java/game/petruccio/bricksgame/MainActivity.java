@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements KeyboardCallback,
             ((TKeyboardRight)getSupportFragmentManager().findFragmentById(R.id.fragmentKeyRight)).setKeyboardListener(this);
         }
         ScoreKeeper.getInstance().setContext(getApplicationContext());
+        GameSettings.getInstance().setContext(getApplicationContext());
         fragGlass.setListener(this);
         fragGlass.continueGame();
     }

@@ -11,6 +11,8 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainScores">
         </activity>
+        <activity android:name=".MainSettings">
+        </activity>
         <activity android:name=".MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

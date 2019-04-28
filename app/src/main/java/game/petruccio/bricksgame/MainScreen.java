@@ -43,6 +43,8 @@ public class MainScreen extends AppCompatActivity implements TextView.OnClickLis
             startActivity(intent);
         }
         if(v==btnSettings){
+            Intent intent = new Intent(MainScreen.this, MainSettings.class);
+            startActivity(intent);
         }
     }
 }

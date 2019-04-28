@@ -25,8 +25,9 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     private final int LINES_PER_LEVEL = 10;
     private final int PAUSE_ITERATIONS = 14;
     private final int TIME_SLEEP = 50;
-    private final int DROP_PAUSE = 2;
+    private final int DROP_PAUSE = 1;
     // Game sounds
+    private boolean isMuted = false;
     private SoundPool beep;
     private float VOLUME = 0.15f;
     private int SND_MAX_STREAMS = 2;
@@ -135,6 +136,7 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
             level = 0;
             isDropping = false;
         }
+        isMuted = GameSettings.getInstance().getMuted();
         btnStart.setText(R.string.strVoid);
         glass.setIsGameOver(false);
         glass.setIsPaused(false);
@@ -163,7 +165,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
                     //playCollide();  // sound
                     isDropping = false;
                     figure.createNew();
-                    beep.play(SND_COLLIDE, VOLUME, VOLUME, 0, 0,0);
+                    if(!isMuted)
+                        beep.play(SND_COLLIDE, VOLUME, VOLUME, 0, 0,0);
                     eliminateLines();
                     nextFigure.postInvalidate();
                     continue;
@@ -184,7 +187,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
                 if (figure.getIsSettled()){ // colliding
                     //playCollide();  // sound
                     figure.createNew();
-                    beep.play(SND_COLLIDE, VOLUME, VOLUME, 0, 0,0);
+                    if(!isMuted)
+                        beep.play(SND_COLLIDE, VOLUME, VOLUME, 0, 0,0);
                     eliminateLines();
                     nextFigure.postInvalidate();
                 }
@@ -224,7 +228,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
                     bricksNet[j][x] = bricksNet[j][x-1];
                 }
             }
-            beep.play(SND_LINE_ERASE, VOLUME, VOLUME, 0, 0,0);
+            if(!isMuted)
+                beep.play(SND_LINE_ERASE, VOLUME, VOLUME, 0, 0,0);
             try {   // pause before disappearing
                 Thread.sleep(250);
             } catch(InterruptedException e) {
@@ -254,7 +259,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     public void moveLeft(){
         if((game!=null) && (!game.isAlive()))
             return;
-        beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
+        if(!isMuted)
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
         figure.moveLeft();
         glass.invalidate();
     }
@@ -262,7 +268,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     public void moveRight(){
         if((game!=null) && (!game.isAlive()))
             return;
-        beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
+        if(!isMuted)
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
         figure.moveRight();
         glass.invalidate();
     }
@@ -270,7 +277,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     public void rotate(){
         if((game!=null) && (!game.isAlive()))
             return;
-        beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
+        if(!isMuted)
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
         figure.rotate();
         glass.invalidate();
     }
@@ -278,7 +286,8 @@ public class TGlass extends Fragment implements Runnable, View.OnClickListener {
     public void moveDown(){
         if((game!=null) && (!game.isAlive()))
             return;
-        beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
+        if(!isMuted)
+            beep.play(SND_MOVE, VOLUME, VOLUME, 0, 0,0);
         isDropping = true;
     }
 

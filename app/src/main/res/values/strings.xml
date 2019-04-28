@@ -18,5 +18,8 @@
     <string name="strPlayer">PLAYER</string>
     <string name="strEnterName">ENTER YOUR NAME</string>
     <string name="strPlayerScores">Your scores:</string>
+    <string name="strSound">SOUND</string>
+    <string name="strNetColour">NETWORK</string>
+    <string name="strColorChange">COLOUR</string>
 
 </resources>

@@ -15,7 +15,7 @@ public class DrawView extends View {
     // Colours
     private final int COLOUR_BACKGROUND = Color.BLACK;
     private final int COLOUR_BORDERS = Color.GREEN;
-    private final int COLOUR_NETWORK = 0xFF151515;
+    private final int COLOUR_NETWORK = 0x15FFFFFF;
     private final int FONT_COLOUR = Color.WHITE;
     // Shapes properties
     private int CELL_SIZE = 20;                 // default brick size
@@ -64,7 +64,8 @@ public class DrawView extends View {
     @Override
     public void onDraw(Canvas canvas){
         canvas.drawColor(COLOUR_BACKGROUND);
-        paint.setColor(COLOUR_NETWORK);
+//        paint.setColor(COLOUR_NETWORK);
+        paint.setColor(GameSettings.getInstance().getColour());
         // Matrix network lines
         paint.setStrokeWidth(THCK_NET);
         for (int i=1 + BORDER_SHIFT; i<=GLASS_X; i++){
