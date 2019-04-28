@@ -6,14 +6,14 @@
 
     <fragment
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:name="com.example.tetris.bricksgame.TKeyboardLeft"
+            android:layout_height="wrap_content" android:name="game.petruccio.bricksgame.TKeyboardLeft"
             android:id="@+id/fragmentKeyLeft" android:layout_weight="1"/>
     <fragment
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:name="com.example.tetris.bricksgame.TGlass"
+            android:layout_height="wrap_content" android:name="game.petruccio.bricksgame.TGlass"
             android:id="@+id/fragment3" android:layout_weight="1"/>
     <fragment
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:name="com.example.tetris.bricksgame.TKeyboardRight"
+            android:layout_height="wrap_content" android:name="game.petruccio.bricksgame.TKeyboardRight"
             android:id="@+id/fragmentKeyRight" android:layout_weight="1"/>
 </LinearLayout>

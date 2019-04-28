@@ -15,7 +15,7 @@ public class DrawNextFigure extends View {
     private final int COLOUR_BORDERS = Color.GREEN;
     // Measures
     private final int CELLS_NUM = 4;            // number of bricks in figure
-    private final int NET_SIZE = 5;             // cells number for the view
+    private final int NET_SIZE = 4;             // cells number for the view
     private final int BORDER_MARGIN = 2;        // margin from the right and bottom borders (for excluding hidden lines)
     private final int THCK_BRICK = 2;           // brick outer line thickness
     private final float BRICK_MARGIN = 0.2f;    // margin (rate) from outer brick to inner brick (free space)
@@ -46,16 +46,16 @@ public class DrawNextFigure extends View {
     public void onDraw(Canvas canvas){
         paint.setColor(COLOUR_NETWORK);
         // Matrix network
-        for(int i=0; i<=CELLS_NUM+2; i++){
-            canvas.drawLine(0 + i*cellSize,0, 0 + i*cellSize, height - BORDER_MARGIN, paint);
-            canvas.drawLine(0,0 + i*cellSize, width - BORDER_MARGIN, 0 + i*cellSize, paint);
-        }
+//        for(int i=0; i<=CELLS_NUM+2; i++){
+//            canvas.drawLine(0 + i*cellSize,0, 0 + i*cellSize, height - BORDER_MARGIN, paint);
+//            canvas.drawLine(0,0 + i*cellSize, width - BORDER_MARGIN, 0 + i*cellSize, paint);
+//        }
         paint.setColor(COLOUR_BORDERS);
         // Matrix borders
-        canvas.drawLine(0 ,0, width, 0, paint);
-        canvas.drawLine(0 ,height, width, height, paint);
-        canvas.drawLine(0 ,0, 0, height, paint);
-        canvas.drawLine(width ,0, width, height, paint);
+//        canvas.drawLine(0 ,0, width, 0, paint);
+//        canvas.drawLine(0 ,height, width, height, paint);
+//        canvas.drawLine(0 ,0, 0, height, paint);
+//        canvas.drawLine(width ,0, width, height, paint);
         // Next figure output
         if(nextFigure==null)
             return;
