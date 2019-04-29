@@ -9,26 +9,31 @@
 
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/main_logo" android:id="@+id/imageView"
-            android:scaleX="0.75" android:scaleY="0.75"/>
+            android:layout_height="wrap_content" app:srcCompat="@drawable/main_logo"
+            android:scaleX="0.75" android:scaleY="0.75" android:id="@+id/imageViewLogo"/>
     <TextView
             android:text="@string/strStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/btnStartGame" android:gravity="center"
-            app:fontFamily="@font/zxspectrum" android:textSize="18sp" android:layout_marginTop="24dp"/>
+            app:fontFamily="@font/zxspectrum" android:textSize="18sp"/>
     <TextView
             android:text="@string/strSettings"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/btnSettings" android:layout_marginTop="24dp"
+            android:layout_height="wrap_content" android:id="@+id/btnSettings" android:layout_marginTop="32dp"
             app:fontFamily="@font/zxspectrum" android:textSize="18sp" android:gravity="center"/>
     <TextView
             android:text="@string/strHighScores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/btnScores" android:gravity="center"
-            android:textSize="18sp" app:fontFamily="@font/zxspectrum" android:layout_marginTop="24dp"/>
+            android:textSize="18sp" app:fontFamily="@font/zxspectrum" android:layout_marginTop="32dp"/>
     <TextView
             android:text="@string/strCredits"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/btnCredits" android:gravity="center"
-            app:fontFamily="@font/zxspectrum" android:layout_marginTop="24dp" android:textSize="18sp"/>
+            app:fontFamily="@font/zxspectrum" android:layout_marginTop="32dp" android:textSize="18sp"/>
+    <TextView
+            android:text="@string/strVoid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/hiddenText" app:fontFamily="@font/zxspectrum"
+            android:layout_marginTop="64dp" android:gravity="center" android:textSize="10sp"/>
 </LinearLayout>

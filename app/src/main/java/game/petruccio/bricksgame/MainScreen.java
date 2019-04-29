@@ -1,6 +1,7 @@
 package game.petruccio.bricksgame;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,22 +13,39 @@ import android.widget.TextView;
  * Starts first.
  */
 public class MainScreen extends AppCompatActivity implements TextView.OnClickListener {
-    private TextView btnStart, btnScores, btnSettings, btnCredits;
+    private final int COUNTS = 10;
+    private TextView btnStart, btnScores, btnSettings, btnCredits, hText;
     private ImageView image;
+    private int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen);
-        btnStart = (TextView) findViewById(R.id.btnStartGame);
-        btnScores = (TextView) findViewById(R.id.btnScores);
-        btnSettings = (TextView) findViewById(R.id.btnSettings);
-        btnCredits = (TextView) findViewById(R.id.btnCredits);
+        Configuration conf = getResources().getConfiguration();
+
+        if(conf.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            setContentView(R.layout.activity_main_screen);
+            btnStart = (TextView) findViewById(R.id.btnStartGame);
+            btnScores = (TextView) findViewById(R.id.btnScores);
+            btnSettings = (TextView) findViewById(R.id.btnSettings);
+            btnCredits = (TextView) findViewById(R.id.btnCredits);
+            hText = (TextView)findViewById(R.id.hiddenText);
+            image = findViewById(R.id.imageViewLogo);
+        } else {
+            setContentView(R.layout.activity_main_screen_hor);
+            btnStart = (TextView) findViewById(R.id.btnStartGameH);
+            btnScores = (TextView) findViewById(R.id.btnScoresH);
+            btnSettings = (TextView) findViewById(R.id.btnSettingsH);
+            btnCredits = (TextView) findViewById(R.id.btnCreditsH);
+            hText = (TextView)findViewById(R.id.hiddenTextH);
+            image = findViewById(R.id.imageViewLogoH);
+        }
+
         btnStart.setOnClickListener(this);
         btnScores.setOnClickListener(this);
         btnSettings.setOnClickListener(this);
         btnCredits.setOnClickListener(this);
-        image = findViewById(R.id.imageView);
+        image.setOnClickListener(this);
         ScoreKeeper.getInstance().setContext(getApplicationContext());
     }
 
@@ -49,6 +67,11 @@ public class MainScreen extends AppCompatActivity implements TextView.OnClickLis
         if(v==btnCredits){
             Intent intent = new Intent(MainScreen.this, MainAbout.class);
             startActivity(intent);
+        }
+        if(v==image){
+            counter++;
+            if(counter>=COUNTS)
+                hText.setText("CRACKED BY BILL GILBERT");
         }
     }
 }
