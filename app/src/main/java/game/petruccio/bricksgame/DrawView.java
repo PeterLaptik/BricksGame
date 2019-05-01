@@ -66,6 +66,7 @@ public class DrawView extends View {
         canvas.drawColor(COLOUR_BACKGROUND);
 //        paint.setColor(COLOUR_NETWORK);
         paint.setColor(GameSettings.getInstance().getColour());
+
         // Matrix network lines
         paint.setStrokeWidth(THCK_NET);
         for (int i=1 + BORDER_SHIFT; i<=GLASS_X; i++){

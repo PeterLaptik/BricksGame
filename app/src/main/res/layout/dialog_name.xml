@@ -16,7 +16,7 @@
             android:inputType="textPersonName"
             android:text="@string/strPlayer"
             android:ems="10"
-            android:id="@+id/textNameInput" android:layout_width="match_parent"/>
+            android:id="@+id/textNameInput" android:layout_width="match_parent" android:maxLength="10"/>
     <Button
             android:text="@android:string/ok"
             android:layout_width="wrap_content"

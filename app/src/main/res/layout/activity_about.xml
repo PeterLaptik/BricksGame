@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/aboutText" app:fontFamily="@font/zxspectrum"
                 android:textSize="12sp" android:layout_marginTop="16dp" android:gravity="center"
-                android:linksClickable="false" android:autoLink="web|none"/>
+                android:linksClickable="false" android:autoLink="web|none" android:lineSpacingMultiplier="1.5"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"

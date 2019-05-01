@@ -21,6 +21,6 @@
     <string name="strSound">SOUND</string>
     <string name="strNetColour">NETWORK</string>
     <string name="strColorChange">COLOUR</string>
-    <string name="strAuthor">WRITTEN BY PETER LAPTIK</string>
+    <string name="strAuthor">WRITTEN BY \nPETER LAPTIK</string>
 
 </resources>

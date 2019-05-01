@@ -55,18 +55,22 @@ public class MainScreen extends AppCompatActivity implements TextView.OnClickLis
             GlassNetArray.getInstance().clear();
             Intent intent = new Intent(MainScreen.this, MainActivity.class);
             startActivity(intent);
+            counter = 0;
         }
         if(v==btnScores){
             Intent intent = new Intent(MainScreen.this, MainScores.class);
             startActivity(intent);
+            counter = 0;
         }
         if(v==btnSettings){
             Intent intent = new Intent(MainScreen.this, MainSettings.class);
             startActivity(intent);
+            counter = 0;
         }
         if(v==btnCredits){
             Intent intent = new Intent(MainScreen.this, MainAbout.class);
             startActivity(intent);
+            counter = 0;
         }
         if(v==image){
             counter++;
